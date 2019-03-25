@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Hellpass{% endblock title %}
+
+{% block extra_css_code %}
+{% endblock extra_css_code %}
+{% block extra_js_imports %}
+    <script type="text/javascript" src="{% static 'hellpass/js/test.js' %}"></script>
+{% endblock extra_js_imports %}
+{% block main_body %}
+<div id="container" style="width: 100vw;">
+    <div id="hellpass-div">
+        <form role="form" id="hellpass-form">
+        <table id="hellpass-table" class="table table-striped table-bordered table_morecondensed" cellspacing="0" style="width:98%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>URL</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Expires</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+        </form>
+    </div>
+    <div class="modal fade" id="modal-settings">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main_body %}
+
+{% block extra_js_code %}
+{% endblock extra_js_code %}
+
+{% block extra_test_cases %}
+    {% if show_unit_test %}{% endif %}
+{% endblock extra_test_cases %}

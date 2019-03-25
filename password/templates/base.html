@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+
+        <title>{% block title %}Hellpass{% endblock title %}</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        {% block extra_css_code %}
+        {% endblock extra_css_code %}
+    </head>
+    <div class="jumbotron">
+            <h1>Password Manager</h1>
+            <a class="btn btn-primary btn-sm" href="/index" role="button">Manage and Add</a>
+            <a class="btn btn-primary btn-sm" href="/home" role="button">Bulk Add</a>
+          </div>
+        <body>
+                    <!-- Add CSRF token to every page -->
+        <div id="global-csrftoken">
+                {% csrf_token %}
+            </div>
+                {% block main_body %}
+                {% endblock main_body %}
+                <script type="text/javascript" src="{% static 'vendor/js/jquery.min.js' %}"></script>
+                <script type="text/javascript" src="{% static 'vendor/js/datatables.js' %}"></script>
+                <script type="text/javascript" src="{% static 'vendor/js/bootstrap.min.js' %}"></script>
+                <script type="text/javascript" src="{% static 'vendor/js/moment.js' %}"></script>
+        </body>
+        {% block extra_js_imports %}
+{% endblock extra_js_imports %}
+
+
+{% block extra_js_code %}
+{% endblock extra_js_code %}
+
+{% block extra_test_cases %}
+    {% if show_unit_test %}{% endif %}
+{% endblock extra_test_cases %}
+    </html>
+
+
+    
+
+
